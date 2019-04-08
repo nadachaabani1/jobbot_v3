@@ -1,0 +1,73 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "industry",
+        "requested_slot",
+        "candidate",
+        "competency",
+        "location",
+        "name",
+        "degree_name",
+        "job_title",
+        "company",
+        "matches"
+      ]
+    },
+    "job_form": {
+      "slots": [
+        "employment_type",
+        "industry",
+        "requested_slot",
+        "competency",
+        "location",
+        "degree_name",
+        "job_title",
+        "company",
+        "career_level"
+      ]
+    },
+    "action_search_jobs": {
+      "slots": [
+        "matches"
+      ]
+    },
+    "candidate_form": {
+      "slots": [
+        "industry",
+        "requested_slot",
+        "candidate",
+        "location",
+        "competency",
+        "candidate_competency",
+        "degree_name",
+        "language",
+        "gender",
+        "experience"
+      ]
+    },
+    "action_search_candidates": {
+      "slots": [
+        "matches"
+      ]
+    }
+  },
+  "python": "3.6.8",
+  "max_histories": [
+    5,
+    null,
+    5,
+    2
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.keras_policy.KerasPolicy",
+    "rasa_core.policies.fallback.FallbackPolicy",
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.form_policy.FormPolicy"
+  ],
+  "trained_at": "20190405-160742",
+  "rasa_core": "0.13.2",
+  "tensorflow": "1.12.0",
+  "sklearn": "0.20.2"
+}

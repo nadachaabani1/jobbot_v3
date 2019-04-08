@@ -1,0 +1,286 @@
+%YAML 1.1
+---
+actions:
+- utter_default
+- utter_ask_location
+- utter_on_it
+- utter_ask_jobmotivation
+- utter_ask_employment_type
+- action_finish
+- utter_ack_findalternatives
+- utter_slots_values
+- action_get_candidates
+- utter_ask_howcanhelp
+- utter_ask_experience
+- utter_ask_competency
+- utter_ack_makeresearch_job
+- action_get_jobs
+- utter_ask_industry
+- utter_ask_job_title
+- utter_ask_more_job_updates
+- utter_greet
+- utter_goodbye
+- utter_ask_more_candidate_updates
+- utter_ask_company
+- action_search_candidates
+- utter_ack_dosearch
+- utter_ask_career_level
+- action_suggest
+- utter_ack_makeresearch_candidate
+- utter_ask_newjob
+- utter_ask_strengths
+- action_search_jobs
+- utter_ask_degree_name
+- utter_ask_language
+- utter_ask_candidate_competency
+- utter_ask_gender
+entities:
+- employment_type
+- industry
+- thankyou
+- candidate
+- language
+- location
+- competency
+- name
+- degree_name
+- career_level
+- job_title
+- info
+- gender
+- company
+- experience
+forms:
+- job_form
+- candidate_form
+intents:
+- inform
+- request_candidate
+- name
+- affirm
+- greet
+- thankyou
+- request_job
+- newjoob
+- deny
+slots:
+  candidate:
+    auto_fill: false
+    type: unfeaturized
+  candidate_competency:
+    type: list
+  career_level:
+    auto_fill: false
+    type: unfeaturized
+  company:
+    type: unfeaturized
+  competency:
+    type: list
+  degree_name:
+    auto_fill: false
+    type: unfeaturized
+  employment_type:
+    auto_fill: false
+    type: unfeaturized
+  experience:
+    type: list
+  gender:
+    auto_fill: false
+    type: unfeaturized
+  industry:
+    auto_fill: false
+    type: unfeaturized
+  info:
+    type: text
+  job_title:
+    type: unfeaturized
+  language:
+    type: list
+  location:
+    type: unfeaturized
+  matches:
+    type: list
+  name:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+templates:
+  utter_ack_dosearch:
+  - text: Sounds amasing, ok let me see what I can find
+  utter_ack_findalternatives:
+  - text: ok let me see what else there is
+  utter_ack_makeresearch_candidate:
+  - text: ok making a search for the candidate ?
+  utter_ack_makeresearch_job:
+  - text: ok making a search for {employment_type} {job_title} position in {location}
+      for {industry} industry?
+  utter_ask_candidate_competency:
+  - text: Do you have any competency preference to find this candidate ?
+  utter_ask_career_level:
+  - buttons:
+    - payload: Un-Skilled
+      title: Un-Skilled
+    - payload: Semi-Skilled
+      title: Semi-Skilled
+    - payload: Skilled
+      title: Skilled
+    - payload: Professional
+      title: Professional
+    - payload: Senior Management
+      title: Senior Management
+    - payload: Supervisor
+      title: Supervisor
+    text: Do you have any experience to complete this job?
+  utter_ask_company:
+  - text: in which company are you interested ?
+  utter_ask_competency:
+  - text: You applied to be {job_title}. So what is your biggest challenge in terms
+      of skills?
+  utter_ask_degree_name:
+  - buttons:
+    - payload: '/inform{"degree_name": "Diploma"}'
+      title: Diploma
+    - payload: '/inform{"degree_name": "Vocational Diploma"}'
+      title: Vocational Diploma
+    - payload: '/inform{"degree_name": "Higher Diploma"}'
+      title: Higher Diploma
+    - payload: '/inform{"degree_name": "(Advanced Diploma) Technical colleges"}'
+      title: (Advanced Diploma) Technical colleges
+    - payload: "/inform{\"degree_name\": \"Bachelor's Degree\"}"
+      title: Bachelor's Degree
+    - payload: "/inform{\"degree_name\": \"Master's Degree\"}"
+      title: Master's Degree
+    - payload: '/inform{"degree_name": "PH.D."}'
+      title: PH.D.
+    text: What's your education level ?
+  utter_ask_employment_type:
+  - buttons:
+    - payload: Full-time
+      title: Full-time
+    - payload: Part-time
+      title: Part-time
+    - payload: Contractual
+      title: Contractual
+    - payload: Casual
+      title: Casual
+    - payload: Fixed term
+      title: Fixed term
+    - payload: Shiftworkers
+      title: Shiftworkers
+    - payload: Daily hire and weekly hire
+      title: Daily hire and weekly hire
+    - payload: Probation
+      title: Probation
+    - payload: Outworkers
+      title: Outworkers
+    text: Each type of employee varies, so it's important to think carefully about
+      which type of worker will work best for you. The nine main employment types
+      are. Please choose one.
+  utter_ask_experience:
+  - text: What's the required minimum experience in years the favor applicants should
+      have ?
+  utter_ask_gender:
+  - buttons:
+    - payload: Male
+      title: Male
+    - payload: Female
+      title: Female
+    - payload: Any
+      title: Any
+    text: Which candidate gender are you looking for?
+  utter_ask_howcanhelp:
+  - text: Nice to you meet you {name}. How can I help you?
+  utter_ask_industry:
+  - buttons:
+    - payload: Agriculture, Forestry, Fishing and Hunting
+      title: Agriculture, Forestry, Fishing and Hunting
+    - payload: Mining, Quarrying, and Oil and Gas Extraction
+      title: Mining, Quarrying, and Oil and Gas Extraction
+    - payload: Utilities
+      title: Utilities
+    - payload: Construction
+      title: Construction
+    - payload: Wholesale Trade
+      title: Wholesale Trade
+    - payload: Information and Cultural Industries
+      title: Information and Cultural Industries
+    - payload: Finance and Insurance
+      title: Finance and Insurance
+    - payload: Management of Companies and Enterprises
+      title: Management of Companies and Enterprises
+    - payload: Administrative and Support, Waste Management and Remediation Services
+      title: Administrative and Support, Waste Management and Remediation Services
+    - payload: Educational Services
+      title: Educational Services
+    - payload: Health Care and Social Assistance
+      title: Health Care and Social Assistance
+    - payload: Accommodation and Food Services
+      title: Accommodation and Food Services
+    - payload: Other Services (except Public Administration)
+      title: Other Services (except Public Administration)
+    - payload: Public Administration
+      title: Public Administration
+    - payload: Unclassified
+      title: Unclassified
+    - payload: Industry
+      title: Industry
+    - payload: Tourism
+      title: Tourism
+    - payload: Government Companies
+      title: Government Companies
+    - payload: Free Zone
+      title: Free Zone
+    - payload: Logistics
+      title: Logistics
+    - payload: Other Sectors
+      title: Other Sectors
+    text: what kind of industry would you like? Please choose one of the following
+      industry
+  utter_ask_job_title:
+  - text: which job position are you looking for ?
+  utter_ask_jobmotivation:
+  - text: What makes you decide to apply for {job_title} position?
+  utter_ask_language:
+  - text: What's the required languages the applicants should speak ?
+  utter_ask_location:
+  - text: Do you have any location preferences?
+  utter_ask_more_candidate_updates:
+  - text: "if you'd like to modify anything else, please tell me what. This is what\
+      \ I currently have:\n - name : {name}\n  - gender : {gender}\n - language :\
+      \ {language} \n - competancy : {competency}\n - degree_name : {degree_name}\n\
+      - experience : {experience}\n - country : {location}\n  - industry : {industry}"
+  utter_ask_more_job_updates:
+  - text: "if you'd like to modify anything else, please tell me what. This is what\
+      \ I currently have:\n - name : {name}\n - industry : {industry}\n - job_title\
+      \ : {job_title}\n - competancy : {competency}\n - employment_type : {employment_type}\n\
+      \ - degree_name : {degree_name}\n - career_level: {career_level}\n - location\
+      \ : {location}\n - company : {company}"
+  utter_ask_newjob:
+  - text: Why are you switching jobs at this point in your career?
+  - text: I am curious as to why you want to leave your current employer.
+  - text: So why don't you tell me why you are interested in changing positions?
+  utter_ask_strenghths:
+  - text: What would you consider your strengths?
+  utter_ask_weakness:
+  - text: What is your biggest weakness?
+  utter_default:
+  - text: I'm sorry, I didn't understand you. I can only help you with the following.
+  utter_goodbye:
+  - text: Well, it was a great time to have a little talk with you, {name}. Thank
+      you.
+  utter_greet:
+  - text: Hey! I'm Dach the Target Chatbot. Feel free to ask me any questions about
+      job application. I will try to point you in the right direction. To start, tell
+      me your name.
+  utter_on_it:
+  - text: I'm on it
+  utter_submit:
+  - text: All done!
+  utter_wrong_career_level:
+  - text: career level is not in the database, please try again
+  utter_wrong_degree_name:
+  - text: degree name is not in the database, please try again
+  utter_wrong_employment_type:
+  - text: employment type is not in the database, please try again
+  utter_wrong_industry:
+  - text: industry is not in the database, please try again
